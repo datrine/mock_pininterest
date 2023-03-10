@@ -11,7 +11,7 @@ import {nanoid} from "nanoid"
 const Login = () => {
   const navigate = useNavigate();
   const { loginWithRedirect, loginWithPopup, user } = useAuth0();
-  //console.log({ user });
+  console.log({ user });
   useEffect(() => {
     if (!user) {
       return;
@@ -45,23 +45,12 @@ const Login = () => {
           </div>
 
           <div className="shadow-2xl">
-            {" "}
             <button
               type="button"
-              className="bg-mainColor flex justify-center items-center p-3 rounded-lg cursor-pointer outline-none"
-              onClick={() => loginWithPopup()}
-            >
-              {/* */} <FcGoogle className="mr-4" /> Sign in
+              className="bg-mainColor flex justify-center items-center p-3 rounded-lg cursor-pointer outline-none text-white"
+              onClick={() => loginWithRedirect()}
+            > <FcGoogle className="mr-4" /> Sign in
             </button>
-            {/**   <GoogleLogin
-              clientId={`${process.env.REACT_APP_GOOGLE_API_TOKEN}`}
-              render={(renderProps) => (
-              
-              )}
-              onSuccess={responseGoogle}
-              onFailure={responseGoogle}
-              cookiePolicy="single_host_origin"
-            />*/}
           </div>
         </div>
       </div>

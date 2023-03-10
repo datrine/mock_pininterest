@@ -28,7 +28,7 @@ const Home = () => {
       if (window.location.pathname === "/login") {
         return;
       }
-      //navigate("/login");
+      navigate("/login");
     }
   }, [isLoading, auth0UserObj]);
   useEffect(() => {
